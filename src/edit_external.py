@@ -10,8 +10,7 @@ from .utils import is_executable, find_executable
 
 
 def get_editor():
-    config = mw.addonManager.getConfig(__name__)
-    user_choice = config.get("editor")
+    user_choice = gc("editor")
     if is_executable(user_choice):
         return user_choice
     editors = [
