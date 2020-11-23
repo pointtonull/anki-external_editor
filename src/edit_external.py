@@ -23,7 +23,6 @@ def get_editor():
         "notepad.exe",
         "code --wait",
         "gvim -f",
-        "vim -gf",
         "atom",
         "atom.exe",
         "gedit",
