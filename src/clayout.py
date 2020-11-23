@@ -17,7 +17,7 @@ def editExternal(self, box, tedit):
     else:
         ext = ".html"
     try:
-        new = edit(text)
+        new = edit(text, ext)
         tedit.setPlainText(new)
     except RuntimeError:
         tooltip('Error when trying to edit externally')

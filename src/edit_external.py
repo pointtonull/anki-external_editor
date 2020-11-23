@@ -36,9 +36,9 @@ def get_editor():
     raise RuntimeError("Could not find external editor")
 
 
-def edit(text):
+def edit(text, ext):
     editor = get_editor()
-    filename = tempfile.mktemp(suffix=".html")
+    filename = tempfile.mktemp(suffix=ext)
 
     with io.open(filename, 'w', encoding='utf-8') as file:
         file.write(text)

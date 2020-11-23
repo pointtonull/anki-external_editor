@@ -10,7 +10,7 @@ from .edit_external import edit
 def edit_with_external_editor(self, field):
     text = self.note.fields[field]
     try:
-        text = edit(text)
+        text = edit(text, ".html")
         self.note.fields[field] = text
         if not self.addMode:
             self.note.flush()
