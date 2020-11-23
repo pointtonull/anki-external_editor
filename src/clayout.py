@@ -10,14 +10,14 @@ from .edit_external import edit
 from .utils import pointversion
 
 
-def editExternal(self, box, tedit):
+def editExternal(self, boxname, tedit):
     text = tedit.toPlainText()
-    if box == "css":
+    if boxname == "css":
         ext = ".css"
     else:
         ext = ".html"
     try:
-        new = edit(text, ext)
+        new = edit(text, ext, ["clayout",  self.model["id"], self.model["name"], boxname])
         tedit.setPlainText(new)
     except RuntimeError:
         tooltip('Error when trying to edit externally')
