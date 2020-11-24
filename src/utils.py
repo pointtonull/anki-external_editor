@@ -2,6 +2,9 @@ import os
 import sys
 import re
 
+from anki import version as anki_version
+
+
 RE_ESCAPED_END = re.compile(r".*?(\\*)$")
 
 
@@ -83,3 +86,7 @@ def find_executable(cmd):
                     return filepath + options
     return None
 
+
+# the function anki.utils.pointVersion was only introduced in 2.1.20 
+_, _, point = anki_version.split(".")
+pointversion = int(point)
